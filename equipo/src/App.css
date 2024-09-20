@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.App-field {
+  width: 400px;
+  margin: 0 auto;
+}
+.App-field-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: lime;
+}
+
+.App-field-row:nth-child(2n) {
+  background-color: green;
+}
+
+.App-field-row div {
+  min-width: 20px;
+  height: 100px;
+  border: 1px dotted lightGray;
+}
+
+.App-field-row div:hover {
+  background-color: yellowgreen;
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+.Player {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .Player-name {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  
+  .Player-number {
+    font-size: 14pt;
+    font-weight: bold;
+    width: 70px;
+    background-color: yellow;
+  }
+  
+  
