@@ -10,10 +10,14 @@ function App() {
   const [team, setTeam] = useState([]);
 
   useEffect(() => {
+    fetchPlayers();
+  }, []);
+
+  const fetchPlayers = () => {
     axios.get('https://backend-team.vercel.app/data')
       .then(result => { setTeam(result.data); })
       .catch(error => console.error('Error fetching data:', error));
-  }, []);
+  };
 
   const changePlayer = position => {
     console.log("Change");
@@ -56,9 +60,16 @@ function App() {
 
   const closeForm = () => { setEditing(false); };
 
+  const resetPlayers = () => {
+    axios.post('https://backend-team.vercel.app/reset')
+      .then(result => { setTeam(result.data); })
+      .catch(error => console.error('Error resetting data:', error));
+  };
+
   return (
     <div className="App">
       <h1>Line up</h1>
+      <button onClick={resetPlayers}>Reset Players</button>
       <div className="App-field">
         <div className="App-field-row">
           <div onClick={() => changePlayer(0)}>{setPlayer(0)}</div>
